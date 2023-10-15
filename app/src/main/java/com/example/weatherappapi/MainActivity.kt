@@ -44,23 +44,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.weatherappapi.constant.Const
 import com.example.weatherappapi.constant.Const.Companion.colorBg1
 import com.example.weatherappapi.constant.Const.Companion.colorBg2
 import com.example.weatherappapi.constant.Const.Companion.permissions
 import com.example.weatherappapi.model.MyLatLng
-import com.example.weatherappapi.model.forecast.ForecastResult
-import com.example.weatherappapi.model.weather.Weather
-import com.example.weatherappapi.model.weather.WeatherResult
 import com.example.weatherappapi.ui.theme.WeatherAppAPITheme
-import com.example.weatherappapi.utils.Utils
-//import com.example.weatherappapi.view.WeatherSection
 import com.example.weatherappapi.viewmodel.MainViewModel
 import com.example.weatherappapi.viewmodel.STATE
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -72,6 +63,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import kotlinx.coroutines.coroutineScope
 
+
+//implemented MVVM pattern
 class MainActivity : ComponentActivity() {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
